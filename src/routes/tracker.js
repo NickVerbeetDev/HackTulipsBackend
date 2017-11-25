@@ -1,6 +1,5 @@
 const express = require('express');
 const Tracker = require('../models/tracker.model');
-const mongoose = require('mongoose');
 
 const router = express.Router();
 
@@ -20,7 +19,7 @@ router.post('/new', (req, res) => {
   const newTracker = new Tracker();
   newTracker.trackingId = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
   newTracker.flightId = 'FF 5560';
-  newTracker.userId = mongoose.Types.ObjectId('5a19826fbd00af3463d41589');
+  newTracker.userId = '5a19826fbd00af3463d41589';
   newTracker.save((err, t) => {
     if (err) {
       console.error(err);
