@@ -4,6 +4,9 @@ const cors = require('cors');
 const errorhandler = require('errorhandler');
 const session = require('express-session');
 const ltiMiddleware = require('express-ims-lti');
+const db = require('./database/db');
+
+db.connect();
 
 const app = express();
 app.enable('trust proxy');
