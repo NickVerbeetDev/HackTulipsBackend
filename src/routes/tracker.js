@@ -7,7 +7,7 @@ router.get('/status/:id', (req, res) => {
   res.json({
     currentZone: Math.round(Math.random() * 4),
     lastUpdate: Date.now(),
-    estimatedArrival: Date.now() + Math.round(Math.random() * 60),
+    estimatedArrival: Date.now() + Math.round(Math.random() * 3600),
   });
 });
 
