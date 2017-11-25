@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const errorhandler = require('errorhandler');
 const session = require('express-session');
-const ltiMiddleware = require('express-ims-lti');
 const db = require('./database/db');
 
 db.connect();
@@ -24,13 +23,7 @@ if (!isProduction) {
 }
 
 app.use('/health-check', require('./routes/health-check'));
-
-app.use('/lti', ltiMiddleware({
-  consumer_key: 'ONE',
-  consumer_secret: 'TWO',
-}));
-
-app.use('/lti', require('./routes/lti'));
+app.use('/user', require('./routes/user'));
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');
