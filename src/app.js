@@ -24,6 +24,7 @@ if (!isProduction) {
 
 app.use('/health-check', require('./routes/health-check'));
 app.use('/user', require('./routes/user'));
+app.use('/tracker', require('./routes/tracker'));
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');
