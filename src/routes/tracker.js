@@ -17,7 +17,11 @@ router.get('/', (req, res) => {
 
 router.post('/new', (req, res) => {
   const newTracker = new Tracker();
-  newTracker.trackingId = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
+  newTracker.trackingId = Math.random()
+    .toString(36)
+    .replace(/[^a-z]+/g, '')
+    .substr(0, 5)
+    .toUpperCase();
   newTracker.flightId = 'FF 5560';
   newTracker.userId = '5a19826fbd00af3463d41589';
   newTracker.save((err, t) => {
