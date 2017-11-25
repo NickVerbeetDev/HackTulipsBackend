@@ -16,6 +16,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  console.log(req.body);
   if (req.body.name && req.body.name !== '') {
     const newUser = new User();
     newUser.name = req.body.name;
