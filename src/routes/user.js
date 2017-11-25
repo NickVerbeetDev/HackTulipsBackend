@@ -16,16 +16,20 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const newUser = new User();
-  newUser.name = req.body.name;
-  newUser.save((err) => {
-    if (err) {
-      console.error(err);
-      res.sendStatus(500);
-    } else {
-      res.sendStatus(201);
-    }
-  });
+  if (req.body.name && req.body.name !== '') {
+    const newUser = new User();
+    newUser.name = req.body.name;
+    newUser.save((err) => {
+      if (err) {
+        console.error(err);
+        res.sendStatus(500);
+      } else {
+        res.sendStatus(201);
+      }
+    });
+  } else {
+    res.sendStatus(422);
+  }
 });
 
 module.exports = router;
