@@ -15,5 +15,18 @@ router.get('/', (req, res) => {
   });
 });
 
+router.post('/', (req, res) => {
+  const newUser = new User();
+  newUser.name = 'Nick';
+  newUser.save((err) => {
+    if (err) {
+      console.error(err);
+      res.sendStatus(500);
+    } else {
+      res.sendStatus(201);
+    }
+  });
+});
+
 module.exports = router;
 
