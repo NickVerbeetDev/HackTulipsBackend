@@ -26,7 +26,7 @@ router.post('/new', (req, res) => {
       console.error(err);
       res.sendStatus(500);
     } else {
-      res.status(201).json({ trackerId: t.id });
+      res.status(201).json({ trackerId: t._id });
     }
   });
 });
