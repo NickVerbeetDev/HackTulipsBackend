@@ -10,8 +10,8 @@ router.get('/status/:id', (req, res) => {
   TrackerZone.find({
     trackerId: req.params.id,
   }).sort('-arrival')
-    .exec((err, currentZoneTrack) => {
-      console.log(currentZoneTrack);
+    .exec((err, currentZoneTrackArray) => {
+      const currentZoneTrack = currentZoneTrackArray[0];
       const jsonResponse = {
         currentZone: currentZoneTrack.zoneName,
         lastUpdate: currentZoneTrack.arrival,
