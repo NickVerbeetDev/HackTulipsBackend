@@ -19,6 +19,7 @@ router.get('/status/:id', (req, res) => {
     .exec((err, currentZoneTrackArray) => {
       console.log(typeof currentZoneTrackArray);
       const currentZoneTrack = currentZoneTrackArray[0];
+      console.log(currentZoneTrackArray);
       const jsonResponse = {
         currentZone: currentZoneTrack.zoneName,
         lastUpdate: currentZoneTrack.arrival,
