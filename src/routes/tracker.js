@@ -7,6 +7,7 @@ const Zone = require('../models/zone.model');
 const router = express.Router();
 
 router.get('/:id', (req, res) => {
+  res.header('Content-Type', 'text/html');
   res.sendFile(path.resolve('../../public/index.html'));
 });
 
