@@ -3,20 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title>Embrace</title>
-    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="/style.css">
   </head>
   <body>
     <div class="header">
-    	<img src="/public/img/laulau.png">
+    	<img src="/img/laulau.png">
     </div>
     <div class="logo">
-    	<img src="/public/img/logo.png">
+    	<img src="/img/logo.png">
     </div>
     <div class="body" id="tracking">
     	<h1>Tracking {{person.name}}</h1>
     	<div class="countdown">{{hours}} hrs {{minutes}} min {{seconds}} seconds</div>
     	<div class="tracking-status">
-    		<img src="/public/img/statusbar.png" class="statusbar">
+    		<img src="/img/statusbar.png" class="statusbar">
     		<div class="info">
     			<div class="item-group" v-for="item in items" v-bind:id="item.id">
 	    			<div class="item event">
@@ -33,6 +33,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.8/vue.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js"></script>
-    <script src="/public/script.js"></script>
+    <script src="/script.js"></script>
   </body>
 </html>
