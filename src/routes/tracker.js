@@ -12,12 +12,12 @@ router.get('/:id', (req, res) => {
 });
 
 router.get('/status/:id', (req, res) => {
-  console.log(req.params.id);
   TrackerZone.find({
     trackerId: req.params.id,
   }).sort('-arrival')
     .limit(1)
     .exec((err, currentZoneTrackArray) => {
+      console.log(typeof currentZoneTrackArray);
       const currentZoneTrack = currentZoneTrackArray[0];
       const jsonResponse = {
         currentZone: currentZoneTrack.zoneName,
@@ -25,7 +25,6 @@ router.get('/status/:id', (req, res) => {
         estimatedArrival: currentZoneTrack.arrival,
       };
 
-      console.log(jsonResponse);
 
       Zone.find((error, zones) => {
         if (error) {
@@ -34,8 +33,6 @@ router.get('/status/:id', (req, res) => {
         } else {
           zones.sort((a, b) => b.order > a.order);
           const zoneOrderPosition = zones.filter((zone) => {
-            console.log(zone.name);
-            console.log(currentZoneTrack);
             return zone.name === currentZoneTrack.name;
           });
           jsonResponse.currentZoneIndex = zoneOrderPosition;
