@@ -4,6 +4,7 @@ const Zone = require('../models/zone.model');
 const router = express.Router();
 
 router.get('/:name', (req, res) => {
+  console.log(req.param.name);
   Zone.find({ 'name' : req.param.name }, (err, zones) => {
     if (err) {
       console.error(err);
