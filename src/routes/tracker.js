@@ -16,9 +16,9 @@ router.get('/status/:id', (req, res) => {
         estimatedArrival: currentZoneTrack.arrival,
       };
 
-      Zone.find((err, zones) => {
-        if (err) {
-          console.error(err);
+      Zone.find((error, zones) => {
+        if (error) {
+          console.error(error);
           res.sendStatus(500);
         } else {
           zones.sort((a, b) => b.order > a.order);
