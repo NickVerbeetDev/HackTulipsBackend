@@ -23,7 +23,7 @@ router.get('/status/:id', (req, res) => {
       const jsonResponse = {
         currentZone: currentZoneTrack.zoneName,
         lastUpdate: currentZoneTrack.arrival,
-        estimatedArrival: Date.now(),
+        estimatedDuration: 0,
       };
 
 
@@ -40,7 +40,7 @@ router.get('/status/:id', (req, res) => {
           jsonResponse.currentZoneIndex = zoneOrderPosition;
           const zonesToPass = zones.filter(zone => zone.order >= zoneOrderPosition);
           zonesToPass.forEach((zone) => {
-            jsonResponse.estimatedArrival += zone.estimatedDuration;
+            jsonResponse.estimatedDuration += zone.estimatedDuration;
           });
           res.json(jsonResponse);
         }

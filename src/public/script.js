@@ -74,7 +74,7 @@ const tracker = new Vue({
         method: 'GET',
         success(data) {
           self.setStatus(data.currentZoneIndex);
-          const seconds = parseInt(data.estimatedArrival - Date.now());
+          const seconds = parseInt(data.estimatedDuration);
           const minutes = parseInt(seconds / 60);
           self.seconds = parseInt(seconds % 60);
           self.minutes = parseInt(minutes % 60);
