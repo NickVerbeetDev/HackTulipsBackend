@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const Tracker = require('../models/tracker.model');
 const TrackerZone = require('../models/tracker-zone.model');
 const Zone = require('../models/zone.model');
@@ -6,7 +7,7 @@ const Zone = require('../models/zone.model');
 const router = express.Router();
 
 router.get('/:id', (req, res) => {
-  res.sendFile(`${__dirname}/../public/index.html`);
+  res.sendFile(path.resolve('../public/index.html'));
 });
 
 router.get('/status/:id', (req, res) => {
