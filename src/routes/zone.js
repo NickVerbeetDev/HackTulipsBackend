@@ -4,7 +4,7 @@ const Zone = require('../models/zone.model');
 const router = express.Router();
 
 router.get('/:name', (req, res) => {
-  Zone.find({ name: req.param.name }, (err, zones) => {
+  Zone.find({ 'name' : req.param.name }, (err, zones) => {
     if (err) {
       console.error(err);
       res.sendStatus(500);
@@ -32,7 +32,8 @@ router.get('/', (req, res) => {
 
 router.put('/:name', (req, res) => {
   console.log('PUT: ', req.param.name);
-  Zone.find({ name: req.param.name }, (err, zones) => {
+  Zone.find({ 'name' : req.param.name }, (err, zones) => {
+    console.log('PUT: ', zones);
     if (err) {
       console.error(err);
       res.sendStatus(500);
@@ -53,7 +54,7 @@ router.put('/:name', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-  Zone.find({ name: req.param.name }).remove((err) => {
+  Zone.find({ 'name' : req.param.name }).remove((err) => {
     if (err) {
       console.error(err);
       res.sendStatus(500);
