@@ -23,7 +23,7 @@ router.get('/status/:id', (req, res) => {
       const jsonResponse = {
         currentZone: currentZoneTrack.zoneName,
         lastUpdate: currentZoneTrack.arrival,
-        estimatedArrival: currentZoneTrack.arrival,
+        estimatedArrival: Date.now(),
       };
 
 
