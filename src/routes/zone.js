@@ -56,7 +56,7 @@ router.put('/:name', (req, res) => {
   });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:name', (req, res) => {
   Zone.find({ 'name' : req.params.name }).remove((err) => {
     if (err) {
       console.error(err);
