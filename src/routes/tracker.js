@@ -35,7 +35,7 @@ router.get('/status/:id', (req, res) => {
           zones.sort((a, b) => b.order > a.order);
           const zoneOrderPosition = zones.filter((zone) => {
             return zone.name === currentZoneTrack.name;
-          });
+          })[0].order;
           jsonResponse.currentZoneIndex = zoneOrderPosition;
           const zonesToPass = zones.filter(zone => zone.order >= zoneOrderPosition);
           zonesToPass.forEach((zone) => {
