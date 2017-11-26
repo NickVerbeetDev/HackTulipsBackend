@@ -31,6 +31,7 @@ router.get('/', (req, res) => {
 });
 
 router.put('/:name', (req, res) => {
+  console.log('PUT: ', req.param.name);
   Zone.find({ name: req.param.name }, (err, zones) => {
     if (err) {
       console.error(err);
