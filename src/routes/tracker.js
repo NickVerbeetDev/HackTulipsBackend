@@ -16,6 +16,7 @@ router.get('/status/:id', (req, res) => {
   TrackerZone.find({
     trackerId: req.params.id,
   }).sort('-arrival')
+    .limit(1)
     .exec((err, currentZoneTrackArray) => {
       const currentZoneTrack = currentZoneTrackArray[0];
       const jsonResponse = {
