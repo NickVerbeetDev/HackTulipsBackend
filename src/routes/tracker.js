@@ -33,7 +33,7 @@ router.get('/status/:id', (req, res) => {
           res.sendStatus(500);
         } else {
           zones.sort((a, b) => b.order > a.order);
-          console.log(zones.length);
+          console.log(currentZoneTrack);
           const zoneOrderPosition = zones.filter((zone) => {
             return zone.name === currentZoneTrack.name;
           });
