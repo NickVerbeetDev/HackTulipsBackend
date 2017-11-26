@@ -13,9 +13,9 @@
     	<img src="/img/logo.png">
     </div>
     <div class="body" id="tracking">
-    	<h1>Tracking {{person.name}}</h1>
-    	<div class="countdown">{{hours}} hrs {{minutes}} min {{seconds}} seconds</div>
-    	<div class="tracking-status">
+        <h1>{{person.name}} <div class="countdown">ETA <span>&nbsp; {{hours}} hrs {{minutes}} min {{seconds}} sec</span></div></h1>
+
+        <div class="tracking-status">
     		<img src="/img/statusbar.png" class="statusbar">
     		<div class="info">
     			<div class="item-group" v-for="item in items" v-bind:id="item.id">
