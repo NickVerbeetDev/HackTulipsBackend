@@ -13,6 +13,7 @@ router.get('/:name', (req, res) => {
       res.json({
         name: zones[0].name,
         estimatedDuration: zones[0].estimatedDuration,
+        order: zones[0].order,
       });
     } else {
       res.json({});
