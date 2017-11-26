@@ -6,10 +6,12 @@ const Zone = require('../models/zone.model');
 const router = express.Router();
 
 router.get('/status/:id', (req, res) => {
+  console.log(req.params.id);
   TrackerZone.find({
     trackerId: req.params.id,
   }).sort('-arrival')
     .exec((err, currentZoneTrack) => {
+      console.log(currentZoneTrack);
       const jsonResponse = {
         currentZone: currentZoneTrack.zoneName,
         lastUpdate: currentZoneTrack.arrival,
