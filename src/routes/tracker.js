@@ -29,7 +29,7 @@ router.get('/status/:id', (req, res) => {
           const zoneOrderPosition = zones.filter(zone => zone.name === currentZoneTrack.name);
           const zonesToPass = zones.filter(zone => zone.order >= zoneOrderPosition);
           zonesToPass.forEach((zone) => {
-            jsonResponse.estimatedArrival += zone.estimatedArrival;
+            jsonResponse.estimatedArrival += zone.estimatedDuration;
           });
           res.json(jsonResponse);
         }
