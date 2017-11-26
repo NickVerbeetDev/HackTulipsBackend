@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+html, body{
+	padding: 0;
+	margin: 0;
+}
+
+.logo{
+	text-align: center;
+	position: relative;
+	top:-400px;
+	animation-name: wegmetdatlogo;
+	animation-duration: 3s;
+}
+.logo img{
+	width: 283px;
+	margin:20px;
+}
+
+#tracking{
+	font-family: 'Raleway', sans-serif;
+}
+
+.header{
+	background: url('img/top-bg.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 508px auto;
+	height: 232px;
+	position: fixed;
+	top: -5px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: 10;
+	animation-duration: 1.5s;
+	animation-name: supermooieheader;
+	animation-timing-function: ease;
+}
+
+.header img{
+	width: 216px;
+	margin-top: 40px;
+	animation-duration: 2s;
+	animation-name: laulauanimatie;
+}
+
+.body{
+	margin: -50px auto 0;
+	text-align: left;
+	width: 360px;
+	animation-duration: 2s;
+	animation-name: keimooiebody;
+	animation-timing-function: ease;
+}
+
+.body img.statusbar{
+	float: left;
+	margin-right: 20px;
+	width: 66px;
+}
+
+.item {
+	padding-top: 25px;
+	font-size: 16px;
+	margin-bottom: 35px;
+}
+
+.item.event {
+	font-weight: bold;
+}
+
+h1{
+	font-size: 20px;
+	font-weight: 900;
+	text-align: center;
+}
+
+.future-overlay{
+	position: relative;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 0;
+	margin-top: 0;
+	background-color: #fff;
+	opacity: 0.7;
+	transition: .5s ease;
+}
+
+
+@keyframes supermooieheader{
+	from{
+		top:-232px;
+	}
+	80%{
+		top: 0;
+	}
+	to{
+		top: -5px;
+	}
+}
+@keyframes laulauanimatie{
+	from{
+		margin-top: 0;
+	}
+	to{
+		margin-top: 40px;
+	}
+}
+
+@keyframes wegmetdatlogo{
+	from{
+		top:0;
+		opacity: 0;
+	}
+	10%{
+		top: 10px;
+		opacity: 1;
+	}
+	50%{
+		top:10px;
+	}
+	to{
+		top:-300px;
+	}
+}
+
+@keyframes keimooiebody{
+	from{
+		opacity: 0;
+		margin-top: 500px;
+	}
+	to{
+		opacity: 1;
+		margin-top: -50px;
+	}
+}
+}

@@ -5,6 +5,10 @@ const Zone = require('../models/zone.model');
 
 const router = express.Router();
 
+router.get('/:id', (req, res) => {
+  res.sendFile('../public/index.html');
+});
+
 router.get('/status/:id', (req, res) => {
   console.log(req.params.id);
   TrackerZone.find({
