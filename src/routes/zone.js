@@ -42,6 +42,7 @@ router.put('/:name', (req, res) => {
       const zone = zones[0];
       zone.name = req.body.name || zone.name;
       zone.estimatedDuration = req.body.estimatedDuration || zone.estimatedDuration;
+      zone.order = req.body.order || zone.order;
       zone.save((error) => {
         if (error) {
           console.error(error);
@@ -70,12 +71,15 @@ router.delete('/:name', (req, res) => {
 router.post('/', (req, res) => {
   const name = req.body.name;
   const estimatedDuration = req.body.estimatedDuration;
+  const order = req.body.order;
 
   if (name && name !== ''
-    && estimatedDuration && estimatedDuration !== '') {
+    && typeof estimatedDuration !== 'undefined' && estimatedDuration !== ''
+    && typeof order !== 'undefined' && order !== '') {
     const newZone = new Zone();
     newZone.name = name;
-    newZone.estimatedDuration = parseInt(estimatedDuration, 10);
+    newZone.estimatedDuration = estimatedDuration;
+    newZone.order = order;
     newZone.save((err) => {
       if (err) {
         console.log(err);
