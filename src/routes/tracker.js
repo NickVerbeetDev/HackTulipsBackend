@@ -18,6 +18,8 @@ router.get('/status/:id', (req, res) => {
         estimatedArrival: currentZoneTrack.arrival,
       };
 
+      console.log(jsonResponse);
+
       Zone.find((error, zones) => {
         if (error) {
           console.error(error);
